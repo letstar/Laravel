@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class BillDetail extends Model
 {
-  Protected $table="bill_detail";
-  Public function products(){
-    return $this->belongTo('App\Product','id_type','id');
-  }
-  Public function bill(){
-    return $this->belongTo('App\Bill','id_bill','id');
-  }
+    protected $table = "bill_detail";
+
+    public function product(){
+    	return $this->belongsTo('App\Product','id_product','id');
+    }
+
+    public function bill(){
+    	return $this->belongsTo('App\Bill','id_bill','id');
+    }
 }
